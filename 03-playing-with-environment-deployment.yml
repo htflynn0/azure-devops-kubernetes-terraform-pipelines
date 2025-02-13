@@ -39,6 +39,8 @@ stages:
         deploy:
           steps:
           - script: echo deploy to Qa
+          - script: echo Test coverage 90%
+            displayName: "Coverage results"
 
 
 - stage: StagingDeploy
