@@ -23,7 +23,7 @@ stages:
         containerRegistry: 'htflynn-docker-hub'
         repository: 'htflynn/currency-exchange-devops'
         command: 'buildAndPush'
-        Dockerfile: '(Build.SourcesDirectory)/Dockerfile'
+        Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
     
 
