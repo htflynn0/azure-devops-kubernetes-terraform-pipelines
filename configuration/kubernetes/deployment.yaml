@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: currency-exchange
-        image: lfacademy/currency-exchange-devops
+        image: htflynn/currency-exchange-devops
         imagePullPolicy: IfNotPresent
         ports:
         - name: liveness-port
