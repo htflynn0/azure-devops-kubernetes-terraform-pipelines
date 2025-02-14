@@ -28,14 +28,12 @@ steps:
     backendAWSKey: 'kubernetes-dev.tfstate'
 
 
-# - task: TerraformTaskV4@4
-#   inputs:
-#     provider: 'azurerm'
-#     command: 'apply'
-#     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
-#     environmentServiceNameAzureRM: 'azure-resource-manager-service-conneciton'
-#     backendServiceAWS: 'aws-for-terraform'
-#     backendAWSBucketName: 'terraform-backend-state-harrisonflynn'
-#     backendAWSKey: 'kubernetes-dev.tfstate'
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'aws'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
+    environmentServiceNameAWS: 'aws-for-terraform'
+
     
 
