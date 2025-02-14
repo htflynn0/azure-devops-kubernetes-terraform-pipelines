@@ -5,8 +5,8 @@ resources:
 - repo: self
 
 variables:
-  # tag: '$(Build.BuildId)'
-  tag: 19
+  tag: '$(Build.BuildId)'
+  # tag: 19
 
 stages:
 - stage: Build
@@ -17,13 +17,14 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    # - task: Docker@2
-    #   displayName: Build an image
-    #   inputs:
-    #     command: build
-    #     dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-    #     tags: |
-    #       $(tag)
+    - task: Docker@2
+      displayName: Build an Push image
+      inputs:
+        containerRegistry: 'htflynn-docker-hub'
+        repository: 'htflynn/currency-exchange-devops'
+        command: 'buildAndPush'
+        Dockerfile: '(Build.SourcesDirectory)/Dockerfile'
+        tags: '$(tag)'
     
 
     - task: CopyFiles@2
